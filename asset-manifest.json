@@ -1,20 +1,25 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.d2031276.css",
-    "main.js": "/personal-website/static/js/main.d5c31141.js",
+    "main.js": "/personal-website/static/js/main.cd1b2555.js",
     "static/js/787.2c38c7fd.chunk.js": "/personal-website/static/js/787.2c38c7fd.chunk.js",
     "static/media/astronaut.png": "/personal-website/static/media/astronaut.dad3001db6bc4d83db98.png",
     "static/media/jpg": "/personal-website/static/media/a01bf2c5564f933dcf1cb2de9945a145.c49c52b9d788790a2da6.jpg",
     "static/media/skills-bg.png": "/personal-website/static/media/skills-bg.4e3b4639edb5ec2212af.png",
     "static/media/projects-bg.png": "/personal-website/static/media/projects-bg.d929d68a948624f1b392.png",
     "static/media/footer-bg2.png": "/personal-website/static/media/footer-bg2.fcfb3fae0c67e499f30e.png",
+    "static/media/LightDance.png": "/personal-website/static/media/LightDance.438a26d862d78cc26c3d.png",
     "static/media/front-end.png": "/personal-website/static/media/front-end.007060dc6bcd15195ef5.png",
+    "static/media/Synethesify.png": "/personal-website/static/media/Synethesify.b2880ae066fb7aad60d6.png",
     "static/media/gavin-logo1.png": "/personal-website/static/media/gavin-logo1.c0efad460ec117b22889.png",
     "static/media/back-end.png": "/personal-website/static/media/back-end.63197521821f609461f1.png",
     "static/media/CentraNo2-Bold.ttf": "/personal-website/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/personal-website/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/react-logo.png": "/personal-website/static/media/react-logo.d6f9e22b319dabb4109a.png",
     "static/media/CentraNo2-Book.ttf": "/personal-website/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/SnakeAI.png": "/personal-website/static/media/SnakeAI.457817f482763dfe5cc0.png",
+    "static/media/UWNests.png": "/personal-website/static/media/UWNests.38be96512135871f9c31.png",
+    "static/media/camera.png": "/personal-website/static/media/camera.91ca06f48e5f022a13b6.png",
     "static/media/contact-img.svg": "/personal-website/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "static/media/revicons.eot": "/personal-website/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/personal-website/static/media/revicons.57fd05d4ae650374c8de.ttf",
@@ -26,11 +31,11 @@
     "static/media/arrow2.svg": "/personal-website/static/media/arrow2.3d9522b6fd8f2464b7200ebf2c1bb09a.svg",
     "static/media/arrow1.svg": "/personal-website/static/media/arrow1.0c89b5b635adf255c2822c630aaa6ccf.svg",
     "main.d2031276.css.map": "/personal-website/static/css/main.d2031276.css.map",
-    "main.d5c31141.js.map": "/personal-website/static/js/main.d5c31141.js.map",
+    "main.cd1b2555.js.map": "/personal-website/static/js/main.cd1b2555.js.map",
     "787.2c38c7fd.chunk.js.map": "/personal-website/static/js/787.2c38c7fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d2031276.css",
-    "static/js/main.d5c31141.js"
+    "static/js/main.cd1b2555.js"
   ]
 }
