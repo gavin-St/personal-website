@@ -1,8 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/front-end.png";
-import projImg2 from "../assets/img/front-end.png";
-import projImg3 from "../assets/img/back-end.png";
+import projImg1 from "../assets/img/camera.png";
+import projImg2 from "../assets/img/UWNests.png";
+import projImg3 from "../assets/img/SnakeAI.png";
+import projImg4 from "../assets/img/LightDance.png";
+import projImg5 from "../assets/img/Synethesify.png";
+import projImgDefault from "../assets/img/back-end.png";
 import colorSharp2 from "../assets/img/projects-bg.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,34 +14,34 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Snake Game AI",
-      description: "Design & Development",
+      title: "Home Security Tracker",
+      description: "Security Backend Prototype",
       imgUrl: projImg1,
     },
     {
-      title: "Light Dance",
-      description: "Motion Detection Web App",
+      title: "UWNests",
+      description: "Waterloo Based Social Media Network",
       imgUrl: projImg2,
     },
     {
-      title: "-Coming Soon-",
-      description: "",
+      title: "Synethesify",
+      description: "Spotify Playlist Art Generator",
+      imgUrl: projImg5,
+    },
+    {
+      title: "Light Dance",
+      description: "Motion Detection Beat Saber Game",
+      imgUrl: projImg4,
+    },
+    {
+      title: "Snake Game AI",
+      description: "Deep Q Neural Network Plays Snake",
       imgUrl: projImg3,
     },
     {
       title: "-Coming Soon-",
       description: "",
-      imgUrl: projImg3,
-    },
-    {
-      title: "-Coming Soon-",
-      description: "",
-      imgUrl: projImg3,
-    },
-    {
-      title: "-Coming Soon-",
-      description: "",
-      imgUrl: projImg3,
+      imgUrl: projImgDefault,
     },
   ];
 
