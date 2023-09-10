@@ -44,11 +44,11 @@ export const Projects = () => {
       description: "Deep Q Neural Network Plays Snake",
       imgUrl: projImg3,
     },
-    {
-      title: "-Coming Soon-",
-      description: "",
-      imgUrl: projImgDefault,
-    },
+    // {
+    //   title: "-Coming Soon-",
+    //   description: "",
+    //   imgUrl: projImgDefault,
+    // },
   ];
 
   return (
