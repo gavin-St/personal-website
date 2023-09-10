@@ -6,6 +6,7 @@ import projImg3 from "../assets/img/SnakeAI.png";
 import projImg4 from "../assets/img/LightDance.png";
 import projImg5 from "../assets/img/Synethesify.png";
 import projImgDefault from "../assets/img/back-end.png";
+import projImg6 from "../assets/img/project-cadence.png"
 import colorSharp2 from "../assets/img/projects-bg.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -32,6 +33,11 @@ export const Projects = () => {
       title: "Light Dance",
       description: "Motion Detection Beat Saber Game",
       imgUrl: projImg4,
+    },
+    {
+      title: "Cadence",
+      description: "Elegeant Music Licence Distributor",
+      imgUrl: projImg6,
     },
     {
       title: "Snake Game AI",
@@ -82,7 +88,7 @@ export const Projects = () => {
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
+                    <Tab.Pane eventKey="second">
                       <p>More to come (I promise)!</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
