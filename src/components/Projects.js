@@ -18,31 +18,37 @@ export const Projects = () => {
       title: "Home Security Tracker",
       description: "Security Backend Prototype",
       imgUrl: projImg1,
+      link: "https://github.com/gavin-St/Home-Security-Tracker"
     },
     {
       title: "UWNests",
       description: "Waterloo Based Social Media Network",
       imgUrl: projImg2,
+      link: "https://github.com/gavin-St/project-program"
     },
     {
       title: "Synethesify",
       description: "Spotify Playlist Art Generator",
       imgUrl: projImg5,
+      link: "https://github.com/gavin-St/synesthesify"
     },
     {
       title: "Light Dance",
       description: "Motion Detection Beat Saber Game",
       imgUrl: projImg4,
+      link: "https://github.com/gavin-St/LightDance"
     },
     {
       title: "Cadence",
       description: "Elegeant Music Licence Distributor",
       imgUrl: projImg6,
+      link: "https://github.com/gavin-St/Cadence"
     },
     {
       title: "Snake Game AI",
       description: "Deep Q Neural Network Plays Snake",
       imgUrl: projImg3,
+      link: "https://github.com/gavin-St/snake-game-ai-pytorch"
     },
     // {
     //   title: "-Coming Soon-",
