@@ -7,18 +7,19 @@ import projImg4 from "../assets/img/LightDance.png";
 import projImg5 from "../assets/img/Synethesify.png";
 import projImgDefault from "../assets/img/back-end.png";
 import projImg6 from "../assets/img/project-cadence.png"
+import projImg7 from "../assets/img/cambio.jpg";
 import colorSharp2 from "../assets/img/projects-bg.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
+  const projects1 = [
     {
-      title: "Home Security Tracker",
-      description: "Security Backend Prototype",
+      title: "NestTrade Trading Bot",
+      description: "Multiple algorithmic live trading accounts",
       imgUrl: projImg1,
-      link: "https://github.com/gavin-St/Home-Security-Tracker"
+      link: "https://github.com/gavin-St/trading-bot"
     },
     {
       title: "UWNests",
@@ -27,10 +28,10 @@ export const Projects = () => {
       link: "https://github.com/gavin-St/project-program"
     },
     {
-      title: "Synethesify",
-      description: "Spotify Playlist Art Generator",
-      imgUrl: projImg5,
-      link: "https://github.com/gavin-St/synesthesify"
+      title: "Home Security Tracker",
+      description: "Security Backend Prototype",
+      imgUrl: projImg1,
+      link: "https://github.com/gavin-St/Home-Security-Tracker"
     },
     {
       title: "Light Dance",
@@ -50,11 +51,25 @@ export const Projects = () => {
       imgUrl: projImg3,
       link: "https://github.com/gavin-St/snake-game-ai-pytorch"
     },
-    // {
-    //   title: "-Coming Soon-",
-    //   description: "",
-    //   imgUrl: projImgDefault,
-    // },
+  ];
+
+  const projects2 = [
+    {
+      title: "Synethesify",
+      description: "Spotify Playlist Art Generator",
+      imgUrl: projImg5,
+      link: "https://github.com/gavin-St/synesthesify"
+    },
+    {
+      title: "Cambio solver",
+      description: "In depth solver for every action in the Cambio card game",
+      imgUrl: projImg7,
+    },
+    {
+      title: "-Coming Soon-",
+      description: "",
+      imgUrl: projImgDefault,
+    },
   ];
 
   return (
@@ -83,7 +98,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          projects1.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -95,7 +110,18 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>More to come (I promise)!</p>
+                      <Row>
+                        {
+                          projects2.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>More to come (I promise)!</p>
