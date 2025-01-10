@@ -8,6 +8,7 @@ import projImg5 from "../assets/img/Synethesify.png";
 import projImgDefault from "../assets/img/back-end.png";
 import projImg6 from "../assets/img/project-cadence.png"
 import projImg7 from "../assets/img/cambio.jpg";
+import projImg8 from "../assets/img/trading-bot.png";
 import colorSharp2 from "../assets/img/projects-bg.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -18,7 +19,7 @@ export const Projects = () => {
     {
       title: "NestTrade Trading Bot",
       description: "Multiple algorithmic live trading accounts",
-      imgUrl: projImg1,
+      imgUrl: projImg8,
       link: "https://github.com/gavin-St/trading-bot"
     },
     {
@@ -64,6 +65,7 @@ export const Projects = () => {
       title: "Cambio solver",
       description: "In depth solver for every action in the Cambio card game",
       imgUrl: projImg7,
+      link: "https://github.com/gavin-St/cambio-bot"
     },
     {
       title: "-Coming Soon-",
