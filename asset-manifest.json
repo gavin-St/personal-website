@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.d2031276.css",
-    "main.js": "/personal-website/static/js/main.ce098553.js",
+    "main.js": "/personal-website/static/js/main.642bd810.js",
     "static/js/787.2c38c7fd.chunk.js": "/personal-website/static/js/787.2c38c7fd.chunk.js",
+    "static/media/gavin1.JPG": "/personal-website/static/media/gavin1.2ecd3fc74587c9e103f8.JPG",
     "static/media/project-cadence.png": "/personal-website/static/media/project-cadence.da46a26bd146a51e4b41.png",
-    "static/media/astronaut.png": "/personal-website/static/media/astronaut.dad3001db6bc4d83db98.png",
     "static/media/jpg": "/personal-website/static/media/a01bf2c5564f933dcf1cb2de9945a145.c49c52b9d788790a2da6.jpg",
     "static/media/skills-bg.png": "/personal-website/static/media/skills-bg.4e3b4639edb5ec2212af.png",
     "static/media/projects-bg.png": "/personal-website/static/media/projects-bg.d929d68a948624f1b392.png",
+    "static/media/trading-bot.png": "/personal-website/static/media/trading-bot.0a932f2e8408892fee6f.png",
     "static/media/footer-bg2.png": "/personal-website/static/media/footer-bg2.fcfb3fae0c67e499f30e.png",
     "static/media/LightDance.png": "/personal-website/static/media/LightDance.438a26d862d78cc26c3d.png",
     "static/media/front-end.png": "/personal-website/static/media/front-end.007060dc6bcd15195ef5.png",
@@ -21,22 +22,24 @@
     "static/media/SnakeAI.png": "/personal-website/static/media/SnakeAI.457817f482763dfe5cc0.png",
     "static/media/UWNests.png": "/personal-website/static/media/UWNests.38be96512135871f9c31.png",
     "static/media/camera.png": "/personal-website/static/media/camera.91ca06f48e5f022a13b6.png",
-    "static/media/contact-img.svg": "/personal-website/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
+    "static/media/cambio.jpg": "/personal-website/static/media/cambio.1fd97f89c8efea7c18dc.jpg",
+    "static/media/contact-img.svg": "/personal-website/static/media/contact-img.62aa99e0f3b968b5d1ce9eb047f34fc7.svg",
     "static/media/revicons.eot": "/personal-website/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/personal-website/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/agile.png": "/personal-website/static/media/agile.3d3b8c8f97c579a03cfe.png",
     "static/media/revicons.woff": "/personal-website/static/media/revicons.e8746a624ed098489406.woff",
     "static/media/logo.svg": "/personal-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "static/media/nav-icon3.svg": "/personal-website/static/media/nav-icon3.08b285abb8e118b52637efa5d65c5367.svg",
+    "static/media/nav-icon3.svg": "/personal-website/static/media/nav-icon3.72cef43bc93b04f52e29f022ef720f8b.svg",
     "index.html": "/personal-website/index.html",
-    "static/media/nav-icon1.svg": "/personal-website/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
-    "static/media/arrow2.svg": "/personal-website/static/media/arrow2.3d9522b6fd8f2464b7200ebf2c1bb09a.svg",
-    "static/media/arrow1.svg": "/personal-website/static/media/arrow1.0c89b5b635adf255c2822c630aaa6ccf.svg",
+    "static/media/nav-icon1.svg": "/personal-website/static/media/nav-icon1.dff40ae802524d8fc0cbce3f312abe4f.svg",
+    "static/media/arrow2.svg": "/personal-website/static/media/arrow2.b3d03e1b04ec1904a5658aea5776433c.svg",
+    "static/media/arrow1.svg": "/personal-website/static/media/arrow1.1088f8313e5637897aff2414e5938141.svg",
     "main.d2031276.css.map": "/personal-website/static/css/main.d2031276.css.map",
-    "main.ce098553.js.map": "/personal-website/static/js/main.ce098553.js.map",
+    "main.642bd810.js.map": "/personal-website/static/js/main.642bd810.js.map",
     "787.2c38c7fd.chunk.js.map": "/personal-website/static/js/787.2c38c7fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d2031276.css",
-    "static/js/main.ce098553.js"
+    "static/js/main.642bd810.js"
   ]
 }
