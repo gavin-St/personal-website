@@ -66,7 +66,6 @@ export const Banner = () => {
                   <span className="flavorText">Born in Toronto, Lived in ShangHai, Studying at Waterloo. My mission to apply my love for coding to help make our world a better place, whether it
                      is a small UI improvement or an AI which can save lives. I look forward to working with you to improve this beautiful world!!
                       </span>
-                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>
           </Col>

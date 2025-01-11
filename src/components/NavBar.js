@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from '../assets/img/gavin-logo1.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/github-logo.png';
-import navIcon3 from '../assets/img/nav-icon3.svg';
+import navIcon3 from '../assets/img/mail-logo.png';
 import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
@@ -45,18 +45,16 @@ export const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              <Nav.Link href="#projects" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Projects</Nav.Link>
+              <Nav.Link href="#experience" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Experience</Nav.Link>
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/in/gavin-song-a90497227/" target="_blank"><img src={navIcon1} alt="" /></a>
-                <a href="https://github.com/gavin-St" target="_blank"><img src={navIcon2} alt="" /></a>
-                <a href="#" ><img src={navIcon3} alt="" /></a>
+              <a href="https://www.linkedin.com/in/gavin-song-a90497227/" target="_blank" class="inline-block align-middle"><img src={navIcon1} alt="linkedin" /></a>
+              <a href="https://github.com/gavin-St" target="_blank" class="inline-block align-middle"><img src={navIcon2} alt="github" /></a>
+              <a href="mailto:g2song@uwaterloo.ca" class="inline-block align-middle"><img src={navIcon3} alt="mail to" /></a>
               </div>
-              <HashLink to='#connect'>
-                <button className="vvd"><span>Let’s Connect</span></button>
-              </HashLink>
+                <button onClick={() => window.open('https://bit.ly/4aeV1o3', '_blank')}><span>My resume</span></button>
             </span>
           </Navbar.Collapse>
         </Container>

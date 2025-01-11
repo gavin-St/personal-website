@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
+import faireLogo from "../assets/img/faire-logo.png";
+import chatsimpleLogo from "../assets/img/chatsimple-logo.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -58,34 +60,58 @@ export const Contact = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h2>Get In Touch</h2>
-                <form onSubmit={handleSubmit}>
-                  <Row>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                <h2>Experience</h2>
+                <div className="mb-8 flex items-start">
+                  <Row className="mb-4">
+                    <Col size={4} md={2} className="d-flex justify-content-center">
+                    <img 
+                      src={faireLogo} 
+                      alt="Faire Logo" 
+                      className="img-fluid" 
+                      style={{ maxWidth: '300px', height: 'auto', objectFit: 'contain' }}
+                    />
+
                     </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                    <Col size={12} md={9}>
+                      <h3 className="mt-3 h5 font-weight-bold">Faire</h3>
+                      <p className="font-weight-medium">Software Engineer Intern</p>
                     </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
-                    </Col>
-                    <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <button type="submit"><span>{buttonText}</span></button>
-                    </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
+                      <p className="small">Sep 2024 - Dec 2024 (Backend Engineer)</p>
+                      <ul className="list-unstyled">
+                        <li className="small">• Led Product Display Feature Experiment: coordinated with DS and Frontend to improve product attributes
+and A/B test retailer impressions.</li>
+                      </ul>
+
+                      <p className="small">Jan 2024 - Apr 2024 (Frontend Engineer)</p>
+                      <ul className="list-unstyled">
+                        <li className="small">• Engineered critical user surfaces in Faire’s pilot AI recommendation engine for product titles/descriptions.</li>
+                      </ul>
                   </Row>
-                </form>
-              </div>}
+                </div>
+              
+                <div className="mb-8 flex items-start">
+                  <Row className="mb-4">
+                    <Col size={4} md={2}>
+                      <img 
+                        src={chatsimpleLogo} 
+                        alt="Chatsimple logo" 
+                        className="img-fluid" 
+                        style={{ maxWidth: '300px', height: 'auto', objectFit: 'contain' }}
+                      />
+                    </Col>
+                    <Col size={12} md={9}>
+                      <h3 className="h5 font-weight-bold">Chatsimple Ltd</h3>
+                      <p className="font-weight-medium">Software Engineer Intern</p>
+                    </Col>
+                      <p className="small">May 2023 - Aug 2023</p>
+                      <ul className="list-unstyled -mt-8">
+                        <li className="small">• Led the full-stack development of Chatsimple’s AI Chatbot product.</li>
+                      </ul>
+                  </Row>
+                </div>
+
+              </div>
+              }
             </TrackVisibility>
           </Col>
         </Row>
