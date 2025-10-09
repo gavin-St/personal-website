@@ -39,7 +39,7 @@ export const introMachine = createMachine({
       ],
       after: {
         // Wait for N letter to finish animating in
-        2000: {
+        1600: {
           target: 'fadingOut',
           actions: assign({ fadeOutOthers: true }),
         },

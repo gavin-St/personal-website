@@ -6,6 +6,8 @@ import type { introMachine } from '../../machines/introMachine';
 type IntroState = ReturnType<ActorRefFrom<typeof introMachine>['getSnapshot']>;
 type IntroSend = ActorRefFrom<typeof introMachine>['send'];
 
+const FADE_IN_EASE = [0.25, 0.1, 0.25, 1] as const;
+
 export default function IntroSequence({
   state,
   send,
@@ -34,12 +36,12 @@ export default function IntroSequence({
       if (index === 2) return { 
         initial: { opacity: 0, y: 2 },
         animate: { opacity: 1, y: 0 },
-        transition: { delay: 0.8, duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }
+        transition: { delay: 0.8, duration: 0.6, ease: FADE_IN_EASE }
       }; // V
       if (index === 3) return { 
         initial: { opacity: 0, y: 2 },
         animate: { opacity: 1, y: 0 },
-        transition: { delay: 1.6, duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }
+        transition: { delay: 1.6, duration: 0.6, ease: FADE_IN_EASE }
       }; // 1
       return { 
         initial: { opacity: 0 },
@@ -53,18 +55,18 @@ export default function IntroSequence({
       return {
         initial: { opacity: 1 },
         animate: { opacity: 0 },
-        transition: { duration: 1, ease: [0.04, 0.62, 0.23, 0.98] }
+        transition: { duration: 1, ease: FADE_IN_EASE }
       }; // Fade out G, A, V, N
     } else if (stage === "morph" && state.context.showGAN) {
       if (index === 0 || index === 1) return {
         initial: { opacity: 0, y: 2 },
         animate: { opacity: 1, y: 0 },
-        transition: { delay: 0, duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }
+        transition: { delay: 0.1, duration: 1.2, ease: FADE_IN_EASE }
       }; // G, A
       if (index === 4) return {
         initial: { opacity: 0, y: 2 },
         animate: { opacity: 1, y: 0 },
-        transition: { delay: 0.2, duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }
+        transition: { delay: 0.6, duration: 1.2, ease: FADE_IN_EASE }
       }; // N
       return { initial: { opacity: 1 }, animate: { opacity: 1 } }; // V, 1 (already visible)
     } else if (stage === "done") {
@@ -144,7 +146,7 @@ export default function IntroSequence({
             className="absolute top-8 left-8 font-medium text-[#111] tracking-[0.08em] text-[clamp(18px,3vw,28px)]"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }}
+            transition={{ duration: 0.6, ease: FADE_IN_EASE }}
             exit={{ opacity: 0, x: -20 }}
           >
             GAVIN
@@ -158,10 +160,10 @@ export default function IntroSequence({
             className="absolute top-1/2 -translate-y-1/2 left-[calc(50%+4em)] border-0 bg-transparent text-black/90
                        text-[clamp(16px,2vw,22px)] tracking-[0.02em] cursor-pointer px-2 py-1
                        transition-transform duration-200 hover:-translate-y-[1px]
-                       focus-visible:outline focus-visible:outline-1 focus-visible:outline-black/40"
+                       focus-visible:outline focus-visible:outline-black/40"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.04, 0.62, 0.23, 0.98] }}
+            transition={{ duration: 0.6, ease: FADE_IN_EASE }}
             exit={{ opacity: 0, x: 20 }}
             onClick={(e) => { e.stopPropagation(); send({ type: 'ADVANCE' }); }}
           >
