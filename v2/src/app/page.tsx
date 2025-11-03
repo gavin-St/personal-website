@@ -2,6 +2,9 @@
 import { useEffect } from "react";
 import { useMachine } from '@xstate/react';
 import IntroSequence from "../components/Intro/IntroSequence";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
+import MainContent from "../components/MainContent";
 import { introMachine } from "../machines/introMachine";
 
 export default function Page() {
@@ -26,9 +29,13 @@ export default function Page() {
   }, [state.value, send]);
 
   const showMain = state.matches('main');
+  const showHeader = state.matches('done') || state.matches('main');
 
   return (
     <main className="min-h-screen bg-white">
+      <Header show={showHeader} />
+      <Sidebar show={showMain} />
+      
       {!showMain && (
         <IntroSequence
           state={state}
@@ -36,18 +43,7 @@ export default function Page() {
         />
       )}
 
-      <section
-        aria-hidden={!showMain}
-        className={[
-          "grid min-h-screen place-items-center text-[#111] font-sans transition-opacity duration-300",
-          showMain ? "opacity-100 visible" : "opacity-0 invisible",
-        ].join(" ")}
-      >
-        <div className="max-w-[720px] p-6">
-          <h1 className="m-0 font-medium tracking-[0.04em]">GAVIN</h1>
-          <p className="mt-3 opacity-80">Main content lives here.</p>
-        </div>
-      </section>
+      {showMain && <MainContent />}
     </main>
   );
 }

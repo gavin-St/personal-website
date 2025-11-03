@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { ActorRefFrom } from 'xstate';
 import type { introMachine } from '../../machines/introMachine';
@@ -16,6 +17,14 @@ export default function IntroSequence({
   send: IntroSend;
 }) {
   const stage = state.context.currentStage;
+  const [dotCount, setDotCount] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDotCount((prev) => (prev + 1) % 4);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleClick = () => {
     if (state.matches('splash')) {
@@ -123,15 +132,15 @@ export default function IntroSequence({
                        text-[12px] tracking-[0.18em] text-black/50 select-none"
             initial={{ opacity: 0, y: 2 }}
             animate={{ 
-              opacity: [0, 1, 1, 0.3, 1], 
+              opacity: [0, 1, 0.4, 1], 
               y: 0 
             }}
             transition={{ 
               delay: 4, 
-              duration: 3,
-              ease: "easeInOut",
+              duration: 2.5,
+              ease: [0.45, 0, 0.5, 1],
               repeat: Infinity,
-              repeatType: "reverse"
+              repeatType: "mirror"
             }}
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
           >
@@ -139,21 +148,7 @@ export default function IntroSequence({
           </motion.div>
         )}
       </AnimatePresence>
-
-      <AnimatePresence>
-        {stage === "done" && (
-          <motion.div
-            className="absolute top-8 left-8 font-medium text-[#111] tracking-[0.08em] text-[clamp(18px,3vw,28px)]"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: FADE_IN_EASE }}
-            exit={{ opacity: 0, x: -20 }}
-          >
-            GAVIN
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+      
       <AnimatePresence>
         {stage === "done" && (
           <motion.button
@@ -167,7 +162,7 @@ export default function IntroSequence({
             exit={{ opacity: 0, x: 20 }}
             onClick={(e) => { e.stopPropagation(); send({ type: 'ADVANCE' }); }}
           >
-            want to see the future..
+            want to see the future{'.'.repeat(dotCount)}
           </motion.button>
         )}
       </AnimatePresence>
