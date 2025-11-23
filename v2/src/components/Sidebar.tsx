@@ -11,19 +11,16 @@ export default function Sidebar({ show }: SidebarProps) {
   if (!show) return null;
 
   const navigationItems = [
-    // First section
     [
       { label: 'about', href: '#about' },
       { label: 'projects', href: '#projects' },
       { label: 'experience', href: '#experience' },
-      { label: 'resume', href: '#resume' },
-    ],
-    // Second section
-    [      
       { label: 'media', href: '#media' },
-      { label: 'contact', href: '#contact' },
-      { label: 'linkedin', href: '#linkedin' },
-      { label: 'email', href: '#email' },
+    ],
+    [
+      { label: 'linkedin', href: 'https://www.linkedin.com/in/gavin-song/', external: true },
+      { label: 'email', href: 'mailto:g2song@uwaterloo.ca', external: true },
+      { label: 'resume', href: 'https://drive.google.com/file/d/1l5BpnXd55grFQTzSuCTOFjmH3mwWKz0s/view?usp=sharing', external: true },
     ],
   ];
 
@@ -45,6 +42,8 @@ export default function Sidebar({ show }: SidebarProps) {
                 <a
                   key={itemIndex}
                   href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="block text-[clamp(14px,1.5vw,16px)] tracking-[0.04em] text-black/60
                              hover:text-black/90 hover:translate-x-2
                              transition-all duration-200 ease-out
@@ -68,7 +67,7 @@ export default function Sidebar({ show }: SidebarProps) {
           href="https://github.com/gavin-st/personal-website"
           target="_blank"
           rel="noopener noreferrer"
-          className="block py-1 text-[clamp(14px,1.5vw,16px)] tracking-[0.04em] text-black
+          className="block py-1 text-[clamp(14px,1.5vw,16px)] tracking-[0.04em] text-black/60
                      hover:text-black/90 hover:translate-x-2
                      transition-all duration-200 ease-out
                      focus-visible:outline focus-visible:outline-black/40 focus-visible:outline-offset-4"
@@ -76,7 +75,7 @@ export default function Sidebar({ show }: SidebarProps) {
           github
         </a>
       </motion.aside>
+
     </>
   );
 }
-

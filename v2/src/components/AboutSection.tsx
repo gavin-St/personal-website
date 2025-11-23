@@ -27,8 +27,8 @@ export default function AboutSection() {
             className="space-y-8"
           >
             <div>
-              <h1 className="text-xl text-black/70 leading-relaxed mb-6">
-                HI, I'M A SOFTWARE ENGINEER FROM TORONTO.
+              <h1 className="text-xl font-[550] text-black leading-relaxed mb-6">
+                HI, I'M A FULLSTACK ENGINEER FROM TORONTO.
               </h1>
             </div>
 
@@ -46,4 +46,3 @@ export default function AboutSection() {
     </section>
   );
 }
-

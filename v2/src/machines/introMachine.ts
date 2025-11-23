@@ -86,6 +86,24 @@ export const introMachine = createMachine({
       },
     },
   },
+  on: {
+    SKIP: {
+      target: '.main',
+      actions: assign({
+        currentStage: 'done',
+        showGAN: false,
+        fadeOutOthers: false,
+      }),
+    },
+    RESTART: {
+      target: '.splash',
+      actions: assign({
+        currentStage: 'splash',
+        showGAN: false,
+        fadeOutOthers: false,
+      }),
+    },
+  },
 }, {
   actions: {
     showGANLetters: () => {
