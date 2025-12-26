@@ -88,12 +88,10 @@ export default function IntroSequence({
   return (
     <div
       onClick={handleClick}
-      className="relative min-h-screen bg-white text-black font-sans overflow-hidden cursor-pointer"
+      className="relative min-h-screen text-black font-sans overflow-hidden cursor-pointer"
       role="button"
       aria-label={stage === "splash" ? "Enter" : "Advance"}
     >
-      <div className="pointer-events-none absolute inset-0 vignette" />
-
       <h1
         aria-live="polite"
         className={[

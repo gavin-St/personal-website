@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function VideoHero() {
   return (
-    <section className="relative px-8 md:px-16 lg:px-24">
+    <section className="relative px-4 md:px-8 lg:px-12">
       <div className="max-w-4xl mx-auto">
         {/* Video area */}
         <motion.div

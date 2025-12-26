@@ -18,9 +18,9 @@ export default function Sidebar({ show }: SidebarProps) {
       { label: 'media', href: '#media' },
     ],
     [
+      { label: 'resume', href: 'https://drive.google.com/file/d/1l5BpnXd55grFQTzSuCTOFjmH3mwWKz0s/view?usp=sharing', external: true },
       { label: 'linkedin', href: 'https://www.linkedin.com/in/gavin-song/', external: true },
       { label: 'email', href: 'mailto:g2song@uwaterloo.ca', external: true },
-      { label: 'resume', href: 'https://drive.google.com/file/d/1l5BpnXd55grFQTzSuCTOFjmH3mwWKz0s/view?usp=sharing', external: true },
     ],
   ];
 
@@ -64,7 +64,7 @@ export default function Sidebar({ show }: SidebarProps) {
         transition={{ duration: 0.6, ease: FADE_IN_EASE, delay: 0.2 }}
       >
         <a
-          href="https://github.com/gavin-st/personal-website"
+          href="https://github.com/gavin-St/personal-website/tree/main/v2"
           target="_blank"
           rel="noopener noreferrer"
           className="block py-1 text-[clamp(14px,1.5vw,16px)] tracking-[0.04em] text-black/60

@@ -16,9 +16,10 @@ export default function Header({ show, reserveSpace = false, onLogoClick }: Head
     <>
       <motion.header
         className={[
-          "fixed top-0 left-0 right-0 w-full px-8 py-8 font-[530] text-[#111] tracking-[0.08em] text-[clamp(18px,3vw,28px)] z-50 bg-white",
+          "fixed top-0 left-0 right-0 w-full px-8 py-8 font-[530] text-[#111] tracking-[0.08em] text-[clamp(18px,3vw,28px)] z-50",
           onLogoClick ? "cursor-pointer" : ""
         ].filter(Boolean).join(" ")}
+        style={{ backgroundColor: '#ffffff' }}
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: FADE_IN_EASE }}

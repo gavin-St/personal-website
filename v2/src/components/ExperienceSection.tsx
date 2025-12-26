@@ -6,7 +6,7 @@ const experiences = [
   {
     title: "Fullstack Engineer Intern",
     company: "ZipRecruiter",
-    period: "May 2026 (Incoming)",
+    period: "Incoming",
     description: "Joining ZipRecruiter to work on large scale job marketplace products and matching intelligence systems.",
     highlights: [
     ]
@@ -17,8 +17,7 @@ const experiences = [
     period: "May 2025 - Aug 2025",
     description: "Built production features for Leap Tools' home visualization platform used by retailers and interior designers.",
     highlights: [
-      "Launched 3D room-measurement tools that reduced merchant onboarding time by 35%",
-      "Implemented image-processing jobs in Go + Python to improve model accuracy for large product catalogs"
+      "Migrated Django models and architected gRPC endpoints for new vendor microservice in Roomvo’s crm tool.",
     ]
   },
   {
@@ -59,7 +58,7 @@ export default function ExperienceSection() {
     <section 
       id="experience" 
       ref={ref}
-      className="min-h-screen bg-white py-32 px-8 md:px-16 lg:px-24"
+      className="min-h-screen bg-transparent py-32 px-8 md:px-16 lg:px-24"
       style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
     >
       <div className="max-w-4xl mx-auto w-full">
@@ -68,7 +67,7 @@ export default function ExperienceSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <h2 className="text-5xl md:text-5xl font-medium tracking-tight text-black mb-8">
+          <h2 className="text-4xl md:text-4xl font-semibold tracking-tight text-black mb-8">
             EXPERIENCE
           </h2>
           
@@ -81,7 +80,8 @@ export default function ExperienceSection() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-                className="relative pl-12"
+                className="relative pl-12 cursor-pointer rounded-lg"
+                whileHover={{ x: 8, backgroundColor: "rgba(0, 0, 0, 0.03)" }}
               >
                 <div className="absolute w-4 h-4 bg-black rounded-full left-2 top-2"></div>
                 
