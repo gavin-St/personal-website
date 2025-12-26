@@ -42,8 +42,8 @@ export default function Sidebar({ show }: SidebarProps) {
                 <a
                   key={itemIndex}
                   href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
+                  target={'external' in item && item.external ? "_blank" : undefined}
+                  rel={'external' in item && item.external ? "noopener noreferrer" : undefined}
                   className="block text-[clamp(14px,1.5vw,16px)] tracking-[0.04em] text-black/60
                              hover:text-black/90 hover:translate-x-2
                              transition-all duration-200 ease-out

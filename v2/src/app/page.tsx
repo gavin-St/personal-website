@@ -11,10 +11,10 @@ const INTRO_CACHE_KEY = "intro:lastSeen";
 const ONE_HOUR_MS = 1000 * 60 * 60;
 
 // UFO Background Configuration - adjust these values to change size and position
-const UFO_CONFIG = {
-  size: '300px', // Change this to adjust image size (e.g., '400px', '800px', '50%', 'auto')
-  position: '55% 40%', // CSS background-position value (e.g., 'center right', '60% 30%', 'top left')
-};
+// const UFO_CONFIG = {
+//   size: '300px', // Change this to adjust image size (e.g., '400px', '800px', '50%', 'auto')
+//   position: '55% 40%', // CSS background-position value (e.g., 'center right', '60% 30%', 'top left')
+// };
 
 export default function Page() {
   const [state, send] = useMachine(introMachine);

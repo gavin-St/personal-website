@@ -113,7 +113,7 @@ export default function IntroSequence({
                 key={`${letter}-${index}`}
                 initial={variants.initial}
                 animate={variants.animate}
-                transition={variants.transition as any}
+                transition={variants.transition}
               >
                 {letter}
               </motion.span>
