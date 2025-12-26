@@ -36,7 +36,7 @@ export default function Page() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [state.value, send]);
+  }, [state, send]);
 
   // Decide whether to skip the intro animation based on cache/hash
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function Page() {
     if (!state.matches('main')) {
       send({ type: 'SKIP' });
     }
-  }, [shouldSkipIntro, state.value, send]);
+  }, [shouldSkipIntro, state, send]);
 
   // Cache completion timestamp whenever the main view is reached
   useEffect(() => {
@@ -65,7 +65,7 @@ export default function Page() {
     if (state.matches('main')) {
       window.localStorage.setItem(INTRO_CACHE_KEY, Date.now().toString());
     }
-  }, [state.value]);
+  }, [state]);
 
   const showMain = state.matches('main');
   const showHeader = state.matches('done') || state.matches('main');

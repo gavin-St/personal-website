@@ -29,7 +29,7 @@ export default function AboutSection() {
           >
             <div>
               <h1 className="text-xl font-[550] text-black leading-relaxed mb-6">
-                HI, I'M A FULLSTACK ENGINEER FROM TORONTO.
+                HI, I&apos;M A FULLSTACK ENGINEER FROM TORONTO.
               </h1>
             </div>
 
@@ -38,7 +38,7 @@ export default function AboutSection() {
                 I like to build things that look good and work well.
               </p>
               <p className="text-lg text-black/70 leading-relaxed">
-              My name is Gavin and I'm a 4th year Computer Science student at the University of Waterloo who specializes in full-stack applications made from React, Node, Python, Kotlin, and Go. Currently, I am building a platform for better research oppotunities in the pure sciences.
+              My name is Gavin and I&apos;m a 4th year Computer Science student at the University of Waterloo who specializes in full-stack applications made from React, Node, Python, Kotlin, and Go. Currently, I am building a platform for better research oppotunities in the pure sciences.
               </p>
             </div>
           </motion.div>
