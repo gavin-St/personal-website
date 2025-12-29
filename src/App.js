@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavBar } from "./components/NavBar";
@@ -12,6 +11,25 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <div style={{
+        paddingTop: '120px',
+        paddingBottom: '40px',
+        textAlign: 'center',
+        fontSize: '22px'
+      }}>
+        This site is outdated. Check out my new personal website at{' '}
+        <a 
+          href="https://gavinsong.ca" 
+          style={{
+            color: '#0066cc',
+            textDecoration: 'underline'
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          gavinsong.ca
+        </a>
+      </div>
       <Banner />
       <Skills />
       <Projects />
