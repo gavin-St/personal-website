@@ -1,5 +1,7 @@
 # My Personal Website
 
-live at https://gavin-st.github.io/personal-website/
+V2 live at https://www.gavinsong.ca
 
-Made using ReactJS
+
+
+old website at https://gavin-st.github.io/personal-website/
