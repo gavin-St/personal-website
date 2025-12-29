@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal-website/static/css/main.66c44d56.css",
-    "main.js": "/personal-website/static/js/main.7f76f36d.js",
+    "main.js": "/personal-website/static/js/main.08a05379.js",
     "static/js/787.2c38c7fd.chunk.js": "/personal-website/static/js/787.2c38c7fd.chunk.js",
     "static/media/gavin1.JPG": "/personal-website/static/media/gavin1.2ecd3fc74587c9e103f8.JPG",
     "static/media/project-cadence.png": "/personal-website/static/media/project-cadence.da46a26bd146a51e4b41.png",
@@ -32,16 +32,15 @@
     "static/media/revicons.ttf": "/personal-website/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/agile.png": "/personal-website/static/media/agile.3d3b8c8f97c579a03cfe.png",
     "static/media/revicons.woff": "/personal-website/static/media/revicons.e8746a624ed098489406.woff",
-    "static/media/logo.svg": "/personal-website/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/personal-website/index.html",
     "static/media/nav-icon1.svg": "/personal-website/static/media/nav-icon1.dff40ae802524d8fc0cbce3f312abe4f.svg",
     "static/media/arrow1.svg": "/personal-website/static/media/arrow1.1088f8313e5637897aff2414e5938141.svg",
     "main.66c44d56.css.map": "/personal-website/static/css/main.66c44d56.css.map",
-    "main.7f76f36d.js.map": "/personal-website/static/js/main.7f76f36d.js.map",
+    "main.08a05379.js.map": "/personal-website/static/js/main.08a05379.js.map",
     "787.2c38c7fd.chunk.js.map": "/personal-website/static/js/787.2c38c7fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.66c44d56.css",
-    "static/js/main.7f76f36d.js"
+    "static/js/main.08a05379.js"
   ]
 }
