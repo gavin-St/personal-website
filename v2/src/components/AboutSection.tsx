@@ -12,7 +12,7 @@ export default function AboutSection() {
     <section 
       id="about" 
       ref={ref}
-      className="min-h-screen bg-transparent py-8 px-8 md:px-16 lg:px-24"
+      className="min-h-screen bg-transparent pt-8 pb-48 px-8 md:px-16 lg:px-24"
     >
       <div className="max-w-4xl mx-auto w-full">
         <motion.div
@@ -59,7 +59,7 @@ export default function AboutSection() {
               className="object-contain"
             />
           </motion.div>
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0 }}
             animate={isInView ? { 
               opacity: [0, 1, 0],
@@ -74,7 +74,7 @@ export default function AboutSection() {
             className="text-base text-black/80 mt-2 -ml-6"
           >
             v1
-          </motion.p>
+          </motion.p> */}
         </div>
       </div>
     </section>

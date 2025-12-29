@@ -25,7 +25,7 @@ export default function MediaSection() {
     <section 
       id="media" 
       ref={ref}
-      className="py-24 px-4 md:px-8 lg:px-12"
+      className="pt-96 pb-12 px-4 md:px-8 lg:px-12"
       style={{ fontFamily: 'Helvetica, sans-serif', backgroundColor: '#ffffff' }}
     >
       <div className="max-w-4xl mx-auto w-full">

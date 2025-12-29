@@ -58,7 +58,7 @@ export default function ExperienceSection() {
     <section 
       id="experience" 
       ref={ref}
-      className="min-h-screen bg-transparent py-32 px-8 md:px-16 lg:px-24"
+      className="min-h-screen bg-transparent py-96 px-8 md:px-16 lg:px-24"
       style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
     >
       <div className="max-w-4xl mx-auto w-full">

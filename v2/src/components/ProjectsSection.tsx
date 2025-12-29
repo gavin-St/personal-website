@@ -73,7 +73,7 @@ export default function ProjectsSection() {
     <section 
       id="projects" 
       ref={ref}
-      className="py-24 px-8 md:px-16 lg:px-24"
+      className="pt-96 pb-[30rem] px-8 md:px-16 lg:px-24"
       style={{ fontFamily: 'Helvetica, sans-serif' }}
     >
       <div className="max-w-4xl mx-auto w-full">
