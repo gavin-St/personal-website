@@ -1,12 +1,14 @@
 "use client";
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useInView, useReducedMotion } from 'framer-motion';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const prefersReducedMotion = useReducedMotion();
+  const [ufoLifted, setUfoLifted] = useState(false);
 
   return (
     <section 
@@ -50,14 +52,38 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            onHoverStart={() => setUfoLifted(true)}
+            onHoverEnd={() => setUfoLifted(false)}
+            onTouchStart={() => setUfoLifted(true)}
+            onTouchEnd={() => setUfoLifted(false)}
             className="relative w-48 h-48"
           >
-            <Image
-              src="/images/UFO.png"
-              alt="UFO"
-              fill
-              className="object-contain"
-            />
+            {/* lift layer: glides up/down on touch */}
+            <motion.div
+              animate={{ y: ufoLifted ? -80 : 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 0.9, 0.3, 1] }}
+              className="relative w-full h-full"
+            >
+              {/* bob layer: never stops bobbing */}
+              <motion.div
+                animate={
+                  prefersReducedMotion
+                    ? { y: 0 }
+                    : {
+                        y: [10, -10],
+                        transition: { duration: 1.4, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" },
+                      }
+                }
+                className="relative w-full h-full"
+              >
+                <Image
+                  src="/images/UFO.png"
+                  alt="UFO"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
+            </motion.div>
           </motion.div>
           {/* <motion.p
             initial={{ opacity: 0 }}

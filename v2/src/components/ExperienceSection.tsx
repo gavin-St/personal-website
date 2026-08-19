@@ -1,112 +1,236 @@
 "use client";
-import { motion, useInView } from 'framer-motion';
+import { motion, useScroll, useSpring, useReducedMotion } from 'framer-motion';
 import { useRef } from 'react';
 
-const experiences = [
+type Stint = {
+  title: string;
+  period: string;
+  highlights: string[];
+};
+
+type CompanyGroup = {
+  company: string;
+  stints: Stint[];
+};
+
+type YearGroup = {
+  year: string;
+  companies: CompanyGroup[];
+};
+
+const timeline: YearGroup[] = [
   {
-    title: "Fullstack Engineer Intern",
-    company: "ZipRecruiter",
-    period: "Incoming",
-    description: "Joining ZipRecruiter to work on large scale job marketplace products and matching intelligence systems.",
-    highlights: [
-    ]
+    year: "",
+    companies: [
+      {
+        company: "Kikoff",
+        stints: [
+          {
+            title: "Software Engineer Intern",
+            period: "Incoming",
+            highlights: [],
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Software Engineer Intern",
-    company: "Leap Tools",
-    period: "May 2025 - Aug 2025",
-    description: "Built production features for Leap Tools' home visualization platform used by retailers and interior designers.",
-    highlights: [
-      "Migrated Django models and architected gRPC endpoints for new vendor microservice in Roomvo’s crm tool.",
-    ]
+    year: "2026",
+    companies: [
+      {
+        company: "ZipRecruiter",
+        stints: [
+          {
+            title: "Fullstack Engineer Intern",
+            period: "May — Aug 2026",
+            highlights: [
+              "Designed an internal observability and distributed tracing platform with OpenTelemetry",
+              "Constructed a custom dashboard app with latency visualizations and interactive trace drilldowns for error propagation",
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Backend Engineer Intern",
-    company: "Faire",
-    period: "Sep 2024 - Dec 2024",
-    description: "Worked on Faire's wholesale marketplace backend with a focus on product discovery systems.",
-    highlights: [
-      "Led the product display feature experiment, coordinating DS + frontend teams",
-      "Ran A/B tests on product attributes to boost retailer impressions"
-    ]
+    year: "2025",
+    companies: [
+      {
+        company: "Leap Tools",
+        stints: [
+          {
+            title: "Software Engineer Intern",
+            period: "May — Aug 2025",
+            highlights: [
+              "Migrated Django models and architected gRPC endpoints for new vendor microservice in Roomvo's crm tool.",
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Frontend Engineer Intern",
-    company: "Faire",
-    period: "Jan 2024 - Apr 2024",
-    description: "Owned key UI surfaces for Faire's pilot AI recommendation engine.",
-    highlights: [
-      "Engineered user flows for AI generated product titles and descriptions",
-    ]
+    year: "2024",
+    companies: [
+      {
+        company: "Faire",
+        stints: [
+          {
+            title: "Backend Engineer Intern",
+            period: "Sep — Dec 2024",
+            highlights: [
+              "Led the product display feature experiment, coordinating DS + frontend teams",
+              "Ran A/B tests on product attributes to boost retailer impressions",
+            ],
+          },
+          {
+            title: "Frontend Engineer Intern",
+            period: "Jan — Apr 2024",
+            highlights: [
+              "Engineered user flows for AI generated product titles and descriptions",
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Software Engineer Intern",
-    company: "Chatsimple Ltd",
-    period: "May 2023 - Aug 2023",
-    description: "First engineering hire working on Chatsimple's AI chatbot builder.",
-    highlights: [
-      "Led the full-stack development of the AI chatbot product from prototype to launch",
-    ]
+    year: "2023",
+    companies: [
+      {
+        company: "Chatsimple Ltd",
+        stints: [
+          {
+            title: "Software Engineer Intern",
+            period: "May — Aug 2023",
+            highlights: [
+              "Led the full-stack development of the AI chatbot product from prototype to launch",
+            ],
+          },
+        ],
+      },
+    ],
   },
 ];
 
+function StintMeta({ stint }: { stint: Stint }) {
+  return (
+    <div className="relative">
+      {/* tick off the spine */}
+      <div className="absolute -left-8 md:-left-16 top-1.5 h-px w-4 md:w-8 bg-black transition-all duration-300 group-hover:w-6 md:group-hover:w-12" />
+      <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-black/45">
+        {stint.period}
+        <span className="mx-3 text-black/20">/</span>
+        {stint.title}
+      </p>
+    </div>
+  );
+}
+
+function Highlights({ items }: { items: string[] }) {
+  if (items.length === 0) return null;
+  return (
+    <ul className="mt-5 space-y-3">
+      {items.map((highlight, hIndex) => (
+        <li
+          key={hIndex}
+          className="flex items-start gap-3 max-w-xl text-black/60 leading-relaxed"
+        >
+          <span className="mt-[0.7em] h-px w-3 flex-shrink-0 bg-black/40" />
+          <span>{highlight}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function ExperienceSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 0.75", "end 0.55"],
+  });
+  const spineScale = useSpring(scrollYProgress, { stiffness: 90, damping: 26 });
 
   return (
-    <section 
-      id="experience" 
-      ref={ref}
+    <section
+      id="experience"
       className="min-h-screen bg-transparent py-96 px-8 md:px-16 lg:px-24"
       style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}
     >
       <div className="max-w-4xl mx-auto w-full">
-        <motion.div
+        <motion.h2
           initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-4xl font-semibold tracking-tight text-black"
         >
-          <h2 className="text-4xl md:text-4xl font-semibold tracking-tight text-black mb-8">
-            EXPERIENCE
-          </h2>
-          
-          <div className="relative mt-16">
-            <div className="absolute left-4 top-0 bottom-0 w-px bg-gray-200" />
-            <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-                className="relative pl-12 cursor-pointer rounded-lg"
-                whileHover={{ x: 8, backgroundColor: "rgba(0, 0, 0, 0.03)" }}
-              >
-                <div className="absolute w-4 h-4 bg-black rounded-full left-2 top-2"></div>
-                
-                <div className="mb-2">
-                  <h3 className="text-2xl font-medium text-black">{exp.title}</h3>
-                  <div className="flex items-center gap-3 mt-1">
-                    <span className="text-lg text-black/70">{exp.company}</span>
-                    <span className="text-black/40">•</span>
-                    <span className="text-sm text-black/50 tracking-wide">{exp.period}</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-2 mt-4">
-                  {exp.highlights.map((highlight, hIndex) => (
-                    <li key={hIndex} className="flex items-start gap-2 text-black/60">
-                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-black/30 flex-shrink-0"></span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+          EXPERIENCE
+        </motion.h2>
+
+        <div ref={timelineRef} className="relative mt-24">
+          {/* spine track + scroll-drawn spine */}
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-black/10" />
+          <motion.div
+            className="absolute left-0 top-0 bottom-0 w-px bg-black origin-top"
+            style={{ scaleY: prefersReducedMotion ? 1 : spineScale }}
+          />
+
+          {timeline.map((group, groupIndex) => (
+            <div key={group.year || groupIndex} className="relative mt-20 first:mt-0">
+              {/* hollow year milestone, cut through by the spine */}
+              {group.year && (
+                <motion.p
+                  aria-hidden="true"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="select-none text-transparent font-bold leading-[0.85] tracking-tighter text-[clamp(3.25rem,11vw,8.5rem)] -ml-1"
+                  style={{ WebkitTextStroke: '1.5px rgba(0,0,0,0.22)' }}
+                >
+                  {group.year}
+                </motion.p>
+              )}
+
+              <div className="mt-6">
+                {group.companies.map((companyGroup) => {
+                  const [firstStint, ...laterStints] = companyGroup.stints;
+                  return (
+                    <motion.article
+                      key={companyGroup.company + firstStint.period}
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-80px" }}
+                      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                      className="group relative pl-8 md:pl-16 py-8"
+                    >
+                      <StintMeta stint={firstStint} />
+
+                      <h3
+                        className="mt-3 w-fit text-black uppercase font-bold tracking-tighter leading-[0.95] text-[clamp(1.75rem,5.5vw,3.75rem)]"
+                      >
+                        {companyGroup.company}
+                      </h3>
+
+                      <Highlights items={firstStint.highlights} />
+
+                      {laterStints.map((stint) => (
+                        <div key={stint.period} className="mt-12">
+                          <StintMeta stint={stint} />
+                          <Highlights items={stint.highlights} />
+                        </div>
+                      ))}
+                    </motion.article>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
