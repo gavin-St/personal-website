@@ -18,7 +18,7 @@ export default function Sidebar({ show }: SidebarProps) {
       { label: 'media', href: '#media' },
     ],
     [
-      { label: 'resume', href: 'https://drive.google.com/file/d/1l5BpnXd55grFQTzSuCTOFjmH3mwWKz0s/view?usp=sharing', external: true },
+      { label: 'resume', href: 'https://drive.google.com/file/d/1CmUk0_DrkdOj5TXZWTfYFKhjNCqc9jjn/view?usp=sharing', external: true },
       { label: 'linkedin', href: 'https://www.linkedin.com/in/gavin-song/', external: true },
       { label: 'email', href: 'mailto:g2song@uwaterloo.ca', external: true },
     ],

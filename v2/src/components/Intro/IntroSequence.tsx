@@ -142,7 +142,7 @@ export default function IntroSequence({
             }}
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
           >
-            CLICK ANYWHERE TO ENTER
+            CLICK TO ENTER
           </motion.div>
         )}
       </AnimatePresence>

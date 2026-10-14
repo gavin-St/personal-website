@@ -19,6 +19,13 @@ const projects: Project[] = [
     link: "https://studythread.fly.dev",
   },
   {
+    title: "Felt",
+    description: "Heads-up no-limit poker harness that pits bots head to head in a sandboxed C++ engine, with live results dashboard.",
+    tags: ["Poker", "Systems", "WebAssembly"],
+    image: "/images/felt-poker-harness.png",
+    link: "https://gavin-st.github.io/Felt/",
+  },
+  {
     title: "UWNest",
     description: "Waterloo-based social network that helps students find community and campus opportunities.",
     tags: ["Social", "Student Life", "Community"],
@@ -71,7 +78,7 @@ const projects: Project[] = [
     title: "WLP C Compiler",
     description: "Parses, compiles, and optimizes C code into assembly language.",
     tags: ["Exploration", "R&D"],
-    image: "/images/coming-soon.png",
+    image: "/images/wlp-c-compiler.png",
     link: "https://github.com/gavin-St/basic-c-compiler",
   },
 ];
@@ -143,30 +150,6 @@ export default function ProjectsSection() {
               </div>
             </motion.a>
           ))}
-
-          {/* placeholder cell so the grid stays even at 10 slots */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: EASE, delay: 0.08 }}
-            className="relative bg-white p-6 md:p-8 min-h-[16rem] md:min-h-[19rem] flex flex-col justify-between"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <span className="font-mono text-[11px] tracking-[0.2em] text-black/25">
-                {pad(projects.length)}
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-black/25 text-right">
-                TBD
-              </span>
-            </div>
-            <h3
-              className="text-transparent uppercase font-bold tracking-tighter leading-[0.95] text-[clamp(1.5rem,2.75vw,2.25rem)]"
-              style={{ WebkitTextStroke: '1.25px rgba(0,0,0,0.2)' }}
-            >
-              Coming Soon
-            </h3>
-          </motion.div>
         </div>
       </div>
     </section>
